@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-- 🔭 I’m currently working on Coding Skills
+- 🔭 I’m currently working on my coding skills
 - 📫 How to reach me: singhpranav1055@gmail.com
 - 😄 Pronouns: He/Him
 
