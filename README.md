@@ -1,5 +1,9 @@
 ### Hi there 👋
 
+- 🔭 I’m currently working on Coding Skills
+- 📫 How to reach me: singhpranav1055@gmail.com
+- 😄 Pronouns: He/Him
+
 <!--
 **pranav-singh-parmar/pranav-singh-parmar** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
