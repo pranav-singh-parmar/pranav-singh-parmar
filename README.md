@@ -18,3 +18,21 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+
+## Watch snake eating my github contributions 
+ 
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://github.com/pranav-singh-parmar/pranav-singh-parmar/blob/output/only-svg/github-contribution-grid-snake-dark.svg"
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://github.com/pranav-singh-parmar/pranav-singh-parmar/blob/output/only-svg/github-contribution-grid-snake.svg"
+  />
+  <img
+    alt="github contribution grid snake animation"
+    src="https://github.com/pranav-singh-parmar/pranav-singh-parmar/blob/output/only-svg/github-contribution-grid-snake.svg"
+  />
+</picture>
