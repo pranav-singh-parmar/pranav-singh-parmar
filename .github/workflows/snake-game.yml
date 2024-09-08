@@ -12,7 +12,17 @@ name: Generate Snake
   # workflow_dispatch:
 
 # Controls when the action will run. This action only runs manually.
+# on:
+#   workflow_dispatch:
+
+
+# Controls when the action will run
 on:
+  # Runs the action every day at midnight UTC
+  schedule:
+    - cron: "0 0 * * *" 
+
+  # Allows manual triggering
   workflow_dispatch:
 
 # The sequence of runs in this workflow:
@@ -25,6 +35,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
+      # Randomize the execution, run only once in 7 days
+      - name: Random execution once in 7 days
+        run: |
+          RANDOM_DAY=$(( ( RANDOM % 7 ) + 1 ))
+          TODAY=$(date +%u) # Get the day of the week (1-7)
+          if [[ "$TODAY" -ne "$RANDOM_DAY" ]]; then
+            echo "Skipping execution for today. Random day: $RANDOM_DAY, Today: $TODAY"
+            exit 0
+          fi
+        shell: bash
     # Checks repo under $GITHUB_WORKSHOP, so your job can access it
       - uses: actions/checkout@v2
 
