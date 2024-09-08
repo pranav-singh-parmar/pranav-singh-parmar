@@ -18,9 +18,9 @@ name: Generate Snake
 
 # Controls when the action will run
 on:
-  # Runs the action every day at midnight UTC
+  # Runs the action daily at midnight UTC
   schedule:
-    - cron: "0 0 * * *" 
+    - cron: "0 0 * * *"
 
   # Allows manual triggering
   workflow_dispatch:
@@ -34,9 +34,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
-      # Randomize the execution, run only once in 7 days
-      - name: Random execution once in 7 days
+      # Randomize the execution, run only once in 7 days for scheduled events
+      - name: Random execution once in 7 days (for scheduled runs)
+        if: github.event_name == 'schedule' # Skip this step for manual runs
         run: |
           RANDOM_DAY=$(( ( RANDOM % 7 ) + 1 ))
           TODAY=$(date +%u) # Get the day of the week (1-7)
@@ -45,10 +45,11 @@ jobs:
             exit 0
           fi
         shell: bash
-    # Checks repo under $GITHUB_WORKSHOP, so your job can access it
+        
+      # Checks repo under $GITHUB_WORKSHOP, so your job can access it
       - uses: actions/checkout@v2
 
-    # Generates the snake  
+      # Generates the snake  
       - uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -56,7 +57,7 @@ jobs:
             dist/only-svg/github-contribution-grid-snake.svg
             dist/only-svg/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-     # show the status of the build. Makes it easier for debugging (if there's any issues).
+      # show the status of the build. Makes it easier for debugging (if there's any issues).
       - run: git status
 
       - uses: Platane/snk@v3
